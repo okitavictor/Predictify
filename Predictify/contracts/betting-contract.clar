@@ -42,3 +42,8 @@
     (ok true)
   )
 )
+
+;; Retrieve bet details for a user on a specific event (read-only function)
+(define-read-only (get-bet (event-id uint) (better principal))
+  (map-get? bets { event-id: event-id, better: better })
+)
